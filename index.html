@@ -13,19 +13,19 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: #f3f4f6;
       color: #111;
     }
 
     .container {
       max-width: 900px;
-      margin: auto;
+      margin: 0 auto;
       padding: 20px;
     }
 
     .product {
-      background: white;
+      background: #fff;
       border-radius: 20px;
       padding: 30px;
       box-shadow: 0 5px 25px rgba(0,0,0,0.08);
@@ -33,42 +33,55 @@
 
     h1 {
       font-size: 34px;
-      margin-bottom: 10px;
+      line-height: 1.2;
+      margin: 0 0 10px;
     }
 
     .subtitle {
       color: #666;
       font-size: 18px;
+      line-height: 1.5;
       margin-bottom: 25px;
     }
 
+    /* ФОТО ТОВАРА */
+
     .product-image {
-      text-align: center;
+      display: grid;
+      gap: 18px;
       margin-bottom: 25px;
     }
 
     .product-image img {
-      max-width: 350px;
+      display: block;
       width: 100%;
+      max-width: 650px;
+      margin: 0 auto;
       border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.12);
     }
 
+    /* ЦЕНА */
+
     .price {
-      margin: 20px 0;
+      margin: 25px 0;
+      text-align: center;
     }
 
     .old-price {
       color: #999;
       text-decoration: line-through;
-      font-size: 20px;
+      font-size: 21px;
       margin-right: 10px;
     }
 
     .new-price {
       color: #e53935;
-      font-size: 32px;
+      font-size: 34px;
       font-weight: bold;
     }
+
+    /* ХАРАКТЕРИСТИКИ */
 
     .features {
       display: grid;
@@ -79,19 +92,25 @@
 
     .feature {
       background: #f5f5f5;
-      padding: 15px;
+      padding: 16px;
       border-radius: 10px;
+      font-size: 16px;
+      line-height: 1.4;
     }
+
+    /* ФОРМА */
 
     .order-box {
       margin-top: 30px;
       padding: 25px;
       background: #fafafa;
       border-radius: 15px;
+      border: 1px solid #eee;
     }
 
     .order-box h2 {
-      margin-top: 0;
+      margin: 0 0 20px;
+      font-size: 27px;
     }
 
     input,
@@ -99,10 +118,12 @@
     textarea {
       width: 100%;
       padding: 14px;
-      margin: 8px 0;
+      margin: 7px 0;
       border: 1px solid #ccc;
       border-radius: 8px;
       font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
     }
 
     textarea {
@@ -132,11 +153,14 @@
       cursor: wait;
     }
 
+    /* СООБЩЕНИЕ */
+
     .message {
       margin-top: 15px;
-      padding: 12px;
+      padding: 14px;
       border-radius: 8px;
       display: none;
+      line-height: 1.4;
     }
 
     .success {
@@ -151,22 +175,43 @@
       color: #a00000;
     }
 
+    /* МОБИЛЬНАЯ ВЕРСИЯ */
+
     @media (max-width: 600px) {
+
       .container {
         padding: 10px;
       }
 
       .product {
-        padding: 20px;
+        padding: 18px;
+        border-radius: 15px;
       }
 
       h1 {
         font-size: 27px;
       }
 
+      .subtitle {
+        font-size: 16px;
+      }
+
       .features {
         grid-template-columns: 1fr;
       }
+
+      .old-price {
+        font-size: 18px;
+      }
+
+      .new-price {
+        font-size: 30px;
+      }
+
+      .order-box {
+        padding: 18px;
+      }
+
     }
   </style>
 </head>
@@ -177,46 +222,85 @@
 
   <div class="product">
 
-    <h1>Aroimac ARO428 — Power Bank 50000 мАг</h1>
+    <!-- ЗАГОЛОВОК -->
+
+    <h1>
+      Aroimac ARO428 — Power Bank 50000 мАг
+    </h1>
 
     <div class="subtitle">
-      Потужна портативна батарея для смартфона, планшета та інших пристроїв
+      Потужний портативний акумулятор зі швидкою зарядкою 22.5W
+      для смартфонів та інших пристроїв
     </div>
+
+
+    <!-- ФОТО ТОВАРА -->
 
     <div class="product-image">
-      <div style="
-        width:280px;
-        height:360px;
-        margin:auto;
-        background:#111;
-        border-radius:35px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        color:white;
-        font-size:24px;
-        font-weight:bold;
-        box-shadow:0 15px 30px rgba(0,0,0,0.25);
-      ">
-        ARO428<br>50000 mAh
-      </div>
+
+      <img
+        src="https://www.aveopt.com.ua/wp-content/uploads/2026/09/7734197860_power-bank-aroimac.jpg"
+        alt="Aroimac ARO428 50000 мАг"
+      >
+
+      <img
+        src="https://www.aveopt.com.ua/wp-content/uploads/2026/09/7734207648_power-bank-aroimac.jpg"
+        alt="Aroimac ARO428 характеристики"
+      >
+
+      <img
+        src="https://www.aveopt.com.ua/wp-content/webp-express/webp-images/uploads/2026/09/7734197874_power-bank-aroimac.jpg.webp"
+        alt="Aroimac ARO428 Power Bank"
+      >
+
     </div>
+
+
+    <!-- ЦЕНА -->
 
     <div class="price">
-      <span class="old-price">2299 грн</span>
-      <span class="new-price">1799 грн</span>
+
+      <span class="old-price">
+        2299 грн
+      </span>
+
+      <span class="new-price">
+        1799 грн
+      </span>
+
     </div>
 
+
+    <!-- ХАРАКТЕРИСТИКИ -->
+
     <div class="features">
-      <div class="feature">🔋 <b>50000 мАг</b></div>
-      <div class="feature">⚡ <b>Швидка зарядка 22.5W</b></div>
-      <div class="feature">📱 Для смартфонів та планшетів</div>
-      <div class="feature">🚚 Доставка по Україні</div>
+
+      <div class="feature">
+        🔋 <b>50000 мАг</b>
+      </div>
+
+      <div class="feature">
+        ⚡ <b>Швидка зарядка 22.5W</b>
+      </div>
+
+      <div class="feature">
+        📱 Для смартфонів та планшетів
+      </div>
+
+      <div class="feature">
+        🚚 Доставка по Україні
+      </div>
+
     </div>
+
+
+    <!-- ФОРМА ЗАКАЗА -->
 
     <div class="order-box">
 
-      <h2>Замовити зараз</h2>
+      <h2>
+        Замовити зараз
+      </h2>
 
       <form id="orderForm">
 
@@ -242,10 +326,23 @@
         >
 
         <select id="post" required>
-          <option value="">Оберіть пошту</option>
-          <option value="Нова Пошта">Нова Пошта</option>
-          <option value="Укрпошта">Укрпошта</option>
-          <option value="Meest">Meest</option>
+
+          <option value="">
+            Оберіть пошту
+          </option>
+
+          <option value="Нова Пошта">
+            Нова Пошта
+          </option>
+
+          <option value="Укрпошта">
+            Укрпошта
+          </option>
+
+          <option value="Meest">
+            Meest
+          </option>
+
         </select>
 
         <input
@@ -260,11 +357,17 @@
           placeholder="Коментар до замовлення"
         ></textarea>
 
-        <button type="submit" id="submitButton">
+        <button
+          type="submit"
+          id="submitButton"
+        >
           Замовити за 1799 грн
         </button>
 
-        <div id="message" class="message"></div>
+        <div
+          id="message"
+          class="message"
+        ></div>
 
       </form>
 
@@ -275,89 +378,144 @@
 </div>
 
 
+<!-- JAVASCRIPT -->
+
 <script>
 
 const WORKER_URL =
   "https://raspy-breeze-4f65.handyplay89.workers.dev/api/order";
 
 
-document.getElementById("orderForm").addEventListener("submit", async function(event) {
+document
+  .getElementById("orderForm")
+  .addEventListener("submit", async function(event) {
 
-  event.preventDefault();
-
-  const button = document.getElementById("submitButton");
-  const message = document.getElementById("message");
-
-  button.disabled = true;
-  button.textContent = "Відправлення...";
-
-  message.className = "message";
-  message.style.display = "none";
-
-  const data = {
-    name: document.getElementById("name").value.trim(),
-    phone: document.getElementById("phone").value.trim(),
-    city: document.getElementById("city").value.trim(),
-    post: document.getElementById("post").value,
-    branch: document.getElementById("branch").value.trim(),
-    comment: document.getElementById("comment").value.trim()
-  };
+    event.preventDefault();
 
 
-  try {
+    const button =
+      document.getElementById("submitButton");
 
-    const response = await fetch(WORKER_URL, {
-
-      method: "POST",
-
-      headers: {
-        "Content-Type": "application/json"
-      },
-
-      body: JSON.stringify(data)
-
-    });
+    const message =
+      document.getElementById("message");
 
 
-    const result = await response.text();
+    button.disabled = true;
+
+    button.textContent =
+      "Відправлення...";
 
 
-    if (response.ok) {
+    message.className =
+      "message";
+
+    message.style.display =
+      "none";
+
+
+    const data = {
+
+      name:
+        document.getElementById("name").value.trim(),
+
+      phone:
+        document.getElementById("phone").value.trim(),
+
+      city:
+        document.getElementById("city").value.trim(),
+
+      post:
+        document.getElementById("post").value,
+
+      branch:
+        document.getElementById("branch").value.trim(),
+
+      comment:
+        document.getElementById("comment").value.trim()
+
+    };
+
+
+    try {
+
+      const response =
+        await fetch(WORKER_URL, {
+
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json"
+          },
+
+          body:
+            JSON.stringify(data)
+
+        });
+
+
+      const result =
+        await response.text();
+
+
+      console.log("Server response:", result);
+
+
+      if (response.ok) {
+
+        message.textContent =
+          "✅ Замовлення успішно відправлено! Ми зв'яжемося з вами найближчим часом.";
+
+        message.className =
+          "message success";
+
+        message.style.display =
+          "block";
+
+
+        document
+          .getElementById("orderForm")
+          .reset();
+
+
+      } else {
+
+        console.error(result);
+
+        message.textContent =
+          "❌ Не вдалося відправити замовлення. Спробуйте ще раз.";
+
+        message.className =
+          "message error";
+
+        message.style.display =
+          "block";
+
+      }
+
+
+    } catch (error) {
+
+      console.error(error);
 
       message.textContent =
-        "✅ Замовлення успішно відправлено! Ми зв'яжемося з вами найближчим часом.";
+        "❌ Помилка з'єднання. Спробуйте ще раз.";
 
-      message.className = "message success";
+      message.className =
+        "message error";
 
-      document.getElementById("orderForm").reset();
-
-    } else {
-
-      console.error(result);
-
-      message.textContent =
-        "❌ Не вдалося відправити замовлення. Спробуйте ще раз.";
-
-      message.className = "message error";
+      message.style.display =
+        "block";
 
     }
 
-  } catch (error) {
 
-    console.error(error);
+    button.disabled =
+      false;
 
-    message.textContent =
-      "❌ Помилка з'єднання. Перевірте інтернет та спробуйте ще раз.";
+    button.textContent =
+      "Замовити за 1799 грн";
 
-    message.className = "message error";
-
-  }
-
-
-  button.disabled = false;
-  button.textContent = "Замовити за 1799 грн";
-
-});
+  });
 
 </script>
 
